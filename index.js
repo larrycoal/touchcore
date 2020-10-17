@@ -5,7 +5,7 @@ const app = express();
 
 app.use(bodyPaser.json());
 app.use(bodyPaser.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'my-app/build')));
+app.use(express.static(path.join(__dirname, 'build')));
 const PORT = process.env.PORT || 3080;
 
 
@@ -31,8 +31,8 @@ const logic = (info) => {
   }
   return newData;
 };
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname+'my-app/build/index.html'));
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname,'build', 'index.html'));
 });
 app.post("/api", (req, res) => {
   newData=[]
