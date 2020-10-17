@@ -40,7 +40,7 @@ app.post("/api", (req, res) => {
   res.json(paymentPlan)
 });
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname+'/my-app/build/index.html'));
+  res.sendFile(path.join('/my-app/build/index.html'));
 });
 
 app.listen(PORT, () => {
