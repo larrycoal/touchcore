@@ -5,6 +5,7 @@ const app = express();
 
 app.use(bodyPaser.json());
 app.use(bodyPaser.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'my-app/build')));
 const PORT = process.env.PORT || 3080;
 
 
@@ -38,7 +39,9 @@ app.post("/api", (req, res) => {
   paymentPlan=logic(info)
   res.json(paymentPlan)
 });
-
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname+'/my-app/build/index.html'));
+});
 
 app.listen(PORT, () => {
   console.log("server started");
