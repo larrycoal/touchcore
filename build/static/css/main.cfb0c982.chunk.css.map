@@ -1,1 +1,0 @@
-{"version":3,"sources":["index.css"],"names":[],"mappings":"AAAA,MACI,WAAY,CACZ,WACJ,CACA,GACI,4BACJ","file":"main.cfb0c982.chunk.css","sourcesContent":["table{\n    margin: 10px;\n    width: 600px;\n}\ntr{\n    border-bottom: 2px solid black;\n}"]}
