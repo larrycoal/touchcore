@@ -31,7 +31,9 @@ const logic = (info) => {
   }
   return newData;
 };
-
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname+'my-app/build/index.html'));
+});
 app.post("/api", (req, res) => {
   newData=[]
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -39,9 +41,7 @@ app.post("/api", (req, res) => {
   paymentPlan=logic(info)
   res.json(paymentPlan)
 });
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname+'my-app/build/index.html'));
-});
+
 
 app.listen(PORT, () => {
   console.log("server started");
