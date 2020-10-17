@@ -39,7 +39,7 @@ app.post("/api", (req, res) => {
   paymentPlan=logic(info)
   res.json(paymentPlan)
 });
-app.get('/', (req, res) => {
+app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname+'my-app/build/index.html'));
 });
 
