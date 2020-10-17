@@ -39,9 +39,9 @@ app.post("/api", (req, res) => {
   paymentPlan=logic(info)
   res.json(paymentPlan)
 });
-// app.get('*', (req, res) => {
-//   res.sendFile(path.join('my-app/build/index.html'));
-// });
+app.get('/', (req, res) => {
+  res.sendFile(path.join('my-app/build/index.html'));
+});
 
 app.listen(PORT, () => {
   console.log("server started");
